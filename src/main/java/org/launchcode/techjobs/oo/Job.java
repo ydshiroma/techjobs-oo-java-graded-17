@@ -34,16 +34,44 @@ public class Job {
     public String toString() {
         StringBuilder jobToString = new StringBuilder();
         String lineBreak = System.lineSeparator();
+        String dataNotAvailable = "Data not available";
+
         jobToString.append(lineBreak);
 
-        return lineBreak +
-                "ID: " + id + lineBreak +
-                "Name: " + name + lineBreak +
-                "Employer: " + getEmployer() + lineBreak +
-                "Location: " + getLocation() + lineBreak +
-                "Position Type: " + getPositionType() + lineBreak +
-                "Core Competency: " + getCoreCompetency() +
-                lineBreak;
+        jobToString.append("ID: " + id);
+        jobToString.append(lineBreak);
+
+        jobToString.append("Name: ");
+        jobToString.append(name.isEmpty() ? dataNotAvailable : name);
+        jobToString.append(lineBreak);
+
+//        String employer = getEmployer();
+        jobToString.append("Employer: ");
+        jobToString.append(getEmployer().getValue().isEmpty() || getEmployer().getValue() == null ? dataNotAvailable : getEmployer());
+        jobToString.append(lineBreak);
+
+        jobToString.append("Location: ");
+        jobToString.append(getLocation().getValue().isEmpty() || getLocation().getValue() == null ? dataNotAvailable : getLocation());
+        jobToString.append(lineBreak);
+
+        jobToString.append("Position Type: ");
+        jobToString.append(getPositionType().getValue().isEmpty() || getPositionType().getValue() == null ? dataNotAvailable : getPositionType());
+        jobToString.append(lineBreak);
+
+        jobToString.append("Core Competency: ");
+        jobToString.append(getCoreCompetency().getValue().isEmpty() || getCoreCompetency().getValue() == null ? dataNotAvailable : getCoreCompetency());
+        jobToString.append(lineBreak);
+
+        return jobToString.toString();
+
+//        return lineBreak +
+//                "ID: " + id + lineBreak +
+//                "Name: " + name + lineBreak +
+//                "Employer: " + getEmployer() + lineBreak +
+//                "Location: " + getLocation() + lineBreak +
+//                "Position Type: " + getPositionType() + lineBreak +
+//                "Core Competency: " + getCoreCompetency() +
+//                lineBreak;
     }
 
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields

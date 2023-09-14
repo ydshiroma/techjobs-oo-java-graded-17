@@ -75,12 +75,12 @@ public class JobTest {
 
     @Test
     public void testToStringHandlesEmptyField() {
-        Job job1 = new Job("", new Employer("ACME"), new Location("Desert"), new PositionType(), new CoreCompetency("Persistence"));
+        Job job1 = new Job("", new Employer(), new Location(), new PositionType(), new CoreCompetency());
         String job1String = job1.toString();
         String lineBreak = System.lineSeparator();
         int id = job1.getId();
 
-        String expectedOutput = lineBreak + "ID: " + id + lineBreak + "Name: Data not available" + lineBreak + "Employer: ACME" + lineBreak + "Location: Desert" + lineBreak + "Position Type: Data not available" + lineBreak + "Core Competency: Persistence" + lineBreak;
+        String expectedOutput = lineBreak + "ID: " + id + lineBreak + "Name: Data not available" + lineBreak + "Employer: Data not available" + lineBreak + "Location: Data not available" + lineBreak + "Position Type: Data not available" + lineBreak + "Core Competency: Data not available" + lineBreak;
         assertSame(expectedOutput, job1String);
     }
 }

@@ -65,7 +65,7 @@
     &quot;last_opened_file_path&quot;: &quot;/Users/Yumi/Desktop/LaunchCode/unit-2/graded-assignments/techjobs-oo-java-graded-17&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.JobTest">
+  <component name="RunManager">
     <configuration name="JobTest.testJobConstructorSetsAllFields" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
