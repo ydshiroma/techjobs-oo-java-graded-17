@@ -32,8 +32,13 @@ public class Job {
 
     @Override
     public String toString() {
+        if (name.isEmpty() && getEmployer().getValue().isEmpty() && getLocation().getValue().isEmpty() && getPositionType().getValue().isEmpty() && getCoreCompetency().getValue().isEmpty()) {
+            return "OOPS! This job does not seem to exist";
+        }
+
         StringBuilder jobToString = new StringBuilder();
         String lineBreak = System.lineSeparator();
+//        char lineBreak = '\n';
         String dataNotAvailable = "Data not available";
 
         jobToString.append(lineBreak);
@@ -47,19 +52,19 @@ public class Job {
 
 //        String employer = getEmployer();
         jobToString.append("Employer: ");
-        jobToString.append(getEmployer().getValue().isEmpty() || getEmployer().getValue() == null ? dataNotAvailable : getEmployer());
+        jobToString.append(getEmployer().getValue() == null || getEmployer().getValue().isEmpty() ? dataNotAvailable : getEmployer());
         jobToString.append(lineBreak);
 
         jobToString.append("Location: ");
-        jobToString.append(getLocation().getValue().isEmpty() || getLocation().getValue() == null ? dataNotAvailable : getLocation());
+        jobToString.append(getLocation().getValue() == null || getLocation().getValue().isEmpty() ? dataNotAvailable : getLocation());
         jobToString.append(lineBreak);
 
         jobToString.append("Position Type: ");
-        jobToString.append(getPositionType().getValue().isEmpty() || getPositionType().getValue() == null ? dataNotAvailable : getPositionType());
+        jobToString.append(getPositionType().getValue() == null || getPositionType().getValue().isEmpty() ? dataNotAvailable : getPositionType());
         jobToString.append(lineBreak);
 
         jobToString.append("Core Competency: ");
-        jobToString.append(getCoreCompetency().getValue().isEmpty() || getCoreCompetency().getValue() == null ? dataNotAvailable : getCoreCompetency());
+        jobToString.append(getCoreCompetency().getValue() == null || getCoreCompetency().getValue().isEmpty() ? dataNotAvailable : getCoreCompetency());
         jobToString.append(lineBreak);
 
         return jobToString.toString();
